@@ -10,9 +10,9 @@ const { getFlights, postFlight, getOneFlight, updateFlight, deleteFlight } =
 
 // routes
 router.get('/', getFlights);
-router.post('/', postFlight);
 router.get('/:id', getOneFlight);
-router.put('/:id', updateFlight);
-router.delete('/:id', deleteFlight);
+router.post('/', verifyToken, postFlight);
+router.put('/:id', verifyToken, updateFlight);
+router.delete('/:id', verifyToken, deleteFlight);
 
 export default router;
