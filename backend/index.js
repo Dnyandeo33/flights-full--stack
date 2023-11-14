@@ -1,12 +1,12 @@
-import express from 'express';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import cookieParser from 'cookie-parser';
+import express from 'express';
 import mongoose from 'mongoose';
 
-import userRoutes from './routes/user.js';
-import flightRoutes from './routes/flight.js';
 import logger from './middleware/logger.js';
+import flightRoutes from './routes/flight.js';
+import userRoutes from './routes/user.js';
 
 dotenv.config();
 const PORT = process.env.PORT || 5009;
