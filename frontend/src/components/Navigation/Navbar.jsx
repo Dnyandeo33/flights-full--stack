@@ -19,6 +19,11 @@ const Navbar = () => {
                                     SignIn & SignUp
                                 </li>
                             </Link>
+                            <Link to="/sign-out">
+                                <li className="text-lg cursor-pointer text-white">
+                                    SignOut
+                                </li>
+                            </Link>
                             <Link>
                                 <li className=" text-lg cursor-pointer text-white">
                                     Helpline
@@ -33,7 +38,7 @@ const Navbar = () => {
                                     Prepare for Travel
                                 </li>
                             </Link>
-                            <Link>
+                            <Link to="my-booking">
                                 <li className=" text-lg cursor-pointer text-white ">
                                     My booking
                                 </li>

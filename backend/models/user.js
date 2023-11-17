@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: [true, "Must be provided"]
-    }
+    },
+    myBooking: [{ type: mongoose.Schema.Types.ObjectId, ref: "flights", required: true }]
 });
 
 export default mongoose.model('User', userSchema);

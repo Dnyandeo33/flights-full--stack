@@ -58,10 +58,6 @@ const userControllers = {
                         { user: emailExist.email },
                         process.env.TOKEN_ACCESS_SECRET
                     );
-                    res.cookie('token', token, {
-                        httpOnly: true,
-                        sameSite: true
-                    });
 
                     return res.status(200).json({
                         success: true,

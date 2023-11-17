@@ -1,5 +1,12 @@
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
+
 const SignOut = () => {
-    return <div>SignOut</div>;
+    const navigate = useNavigate();
+    navigate('/');
+    const [_, setCookies] = useCookies(['access_token']);
+    setCookies('token', '');
+    window.localStorage.removeItem('id');
 };
 
 export default SignOut;

@@ -1,17 +1,21 @@
 import express from 'express';
-
-const router = express.Router();
-
 import flightControllers from '../controllers/flight.js';
 import verifyToken from '../middleware/verifyToken.js';
 
-const { getFlights, postFlight, getOneFlight, updateFlight, deleteFlight } =
+const router = express.Router();
+
+const { getFlights, postFlight, getOneFlight, putBooking, getBookingId, getBooking, updateFlight, deleteFlight } =
     flightControllers;
 
 // routes
 router.get('/', getFlights);
-router.get('/:id', getOneFlight);
 router.post('/', verifyToken, postFlight);
+
+router.put('/my-booking', putBooking);
+router.get('/my-bookingId/:id', getBookingId);
+router.get('/my-booking/:id', getBooking);
+
+router.get('/:id', getOneFlight);
 router.put('/:id', verifyToken, updateFlight);
 router.delete('/:id', verifyToken, deleteFlight);
 
